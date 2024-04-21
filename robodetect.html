@@ -1,428 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ROBODETECT</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="small icon" href="images/tab-icon.png" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROBODETECT</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="small icon" href="images/tab-icon.png">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-</head>
+	<body>
+		<nav class="navbar">
+			<a href="#home" class="scroll-link">Home</a>
+			<a href="#features" class="scroll-link">Features</a>
+			<a href="#how-it-works" class="scroll-link"> How It Works</a>
+			<a href="#about-us" class="scroll-link">About Us</a>
+			<a href="#contact-us" class="scroll-link">Contact Us</a>
+		</nav>
+		<header class="hero" id="home">
+			<div class="hero-content">
+				<h1>ROBODETECTION</h1>
+				<h2>
+					Robot dog control and command system for human detection,
+					tracking and mapping.
+				</h2>
+				<p>
+					Robodetect project is designed to help rescue teams to plan
+					their rescue operations in disaster areas. By using cutting
+					edge technologies Robodetect ensures successfull rescue.
+					With <b>ROBODETECT</b>, rescue operations will be more
+					faster, reliable and secure for both rescuer and survivors.
+				</p>
+				<a href="#features" class="scroll-link">Learn More</a>
+			</div>
+		</header>
 
-<body>
-    <nav class="navbar">
-        <a href="#home" class="scroll-link">Home</a>
-        <a href="#features" class="scroll-link">Features</a>
-        <a href="#how-it-works" class="scroll-link"> How It Works</a>
-        <a href="#about-us" class="scroll-link">About Us</a>
-        <a href="#contact-us" class="scroll-link">Contact Us</a>
-    </nav>
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <h1>ROBODETECT<br>Robot dog control and command system for human detection, tracking and  mapping.</h1>
-            <p>Robodetect project is designed to help rescue teams to plan their rescue operations in disaster areas.
-                By using cutting edge technologies Robodetect ensures successfull rescue. With <b>ROBODETECT</b>, rescue operations 
-                will be more faster, reliable and secure for both rescuer and survivors.</p>
-            <a href="#features" class="btn scroll-link">Learn More</a>
-        </div>
-    </header>
+		<main>
+			<section id="features">
+				<h2 style="margin-top: 2rem">Features</h2>
+				<div class="features lazy-load">
+					<div class="feature" id="feature1">
+						<div class="feature-image">
+							<img
+								src="images/human_detect.webp"
+								alt="Feature 1"
+							/>
+						</div>
+						<div class="feature-content">
+							<p>
+								Gets real-time video stream from robot dog to
+								server. Process video with YOLO object detection
+								algorithm and send processed video stream to web
+								control UI with humans tagged with bounded
+								boxes. By detecting humans in its vision
+								Robodetect gives operator to select and track
+								any human in its vision.
+							</p>
+							<h3>Human Detection</h3>
+						</div>
+						<div id="modal1" class="modal">
+							<div class="modal-content">
+								<span class="close" id="close1">&times;</span>
+								<p style="color: white">Human Detection</p>
+								<div class="video-container">
+									<video controls autoplay playsinline>
+										<source
+											src="videos/human_detection.mp4"
+											type="video/mp4"
+										/>
+										Your browser does not support the video
+										tag.
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="feature" id="feature2">
+						<div class="feature-image">
+							<img src="images/human_track.jpg" alt="Feature 2" />
+						</div>
+						<div class="feature-content">
+							<p>
+								Rescue operator can select target person just by
+								a mouse click on the video in Web UI. Server
+								sends necessary movement commands to robot dog
+								from automatically generated path for tracking.
+								This tracker feature can be used by rescuers to
+								track spesific team member in rescue ares such
+								as debris, caves etc. where manual control would
+								be cumbersome.
+							</p>
+							<h3>Human Tracking</h3>
+						</div>
+						<div id="modal2" class="modal">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<span class="close" id="close2">&times;</span>
+								<p style="color: white">Human Tracking</p>
+								<div class="video-container">
+									<video controls autoplay playsinline>
+										<source
+											src="videos/Mapping.mp4"
+											type="video/mp4"
+										/>
+										Your browser does not support the video
+										tag.
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="feature" id="feature3">
+						<div class="feature-image">
+							<img src="images/mapping.jpg" alt="Feature 3" />
+						</div>
+						<div class="feature-content">
+							<p>
+								Robodetect system utilizes robot dog's deep
+								camera for creating real time 2D occupancy grid
+								map of the area. Robot takes sensor data and
+								send it to server. Server sends back updated map
+								to Web UI. Real time Area maps is an very
+								beneficial element for rescue planning. Rescue
+								team can send robot dog beforehand to get a
+								mapping of area.
+							</p>
+							<h3>Real Time Area Mapping</h3>
+						</div>
+						<div id="modal3" class="modal">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<span class="close" id="close3">&times;</span>
+								<p style="color: white">
+									Real Time Area Mapping
+								</p>
+								<div class="video-container">
+									<video controls autoplay playsinline>
+										<source
+											src="videos/Mapping.mp4"
+											type="video/mp4"
+										/>
+										Your browser does not support the video
+										tag.
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="feature" id="feature4">
+						<div class="feature-image">
+							<img src="images/control.jpg" alt="Feature 4" />
+						</div>
+						<div class="feature-content">
+							<p>
+								Operator can control and give movement, tracking
+								etc. commands from any browser. Most of the
+								robot dogs require specialized control devices
+								which can be quite complex. Our specially
+								designed Web UI offers both simple keyboard
+								control and digital joystick control. It even
+								supports XBOX controller for precise movements!
+							</p>
+							<h3>Control and Command for Robot Dog</h3>
+						</div>
+						<div id="modal4" class="modal">
+							<!-- Modal content -->
+							<div class="modal-content">
+								<span class="close" id="close4">&times;</span>
+								<p style="color: white">Soil Monitoring</p>
+								<div class="video-container">
+									<video controls autoplay playsinline>
+										<source
+											src="videos/farm-monitor.mp4"
+											type="video/mp4"
+										/>
+										Your browser does not support the video
+										tag.
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-    <main>
-        <section id="features">
-            <h2 style="margin-top: 2rem;">Features</h2>
-            <div class="features lazy-load">
-                <div class="feature" id="feature1">
-                    <div class="feature-image">
-                        <img src="images/human_detect.webp" alt="Feature 1">
-                    </div>
-                    <div class="feature-content">
-                        <p>Gets real-time video stream from robot dog to server. Process
-                             video with YOLO object detection algorithm
-                            and send processed video stream to web control UI with humans tagged with bounded boxes.
-                            By detecting humans in its vision Robodetect gives operator to select and track any human
-                            in its vision.
-                        </p>
-                        <h3>Human Detection</h3>
-                    </div>
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                          <span class="close" id="close1">&times;</span>
-                          <p style="color: white;">Human Detection</hp2>
-                          <div class="video-container">
-                              <video controls autoplay playsinline>
-                                  <source src="videos/human_detection.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                              </video>
-                          </div>
-                        </div>
-                      
-                      </div>
-                </div>
-                <div class="feature" id="feature2">
-                    <div class="feature-image">
-                        <img src="images/human_track.jpg" alt="Feature 2">
-                    </div>
-                    <div class="feature-content">
-                        <p>Rescue operator can select target person just by a mouse click on the video  in Web UI.
-                            Server sends necessary movement commands to robot dog from automatically generated path for tracking.
-                            This tracker feature can be used by rescuers to track spesific team member in rescue ares such as debris, 
-                            caves etc. where manual control would be cumbersome.
-                        </p>
-                        <h3>Human Tracking</h3>
-                    </div>
-                    <div id="modal2" class="modal">
+			<section class="how-it-works" id="how-it-works">
+				<h2>How It Works</h2>
 
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                          <span class="close" id="close2">&times;</span>
-                          <p style="color: white;">Human Tracking</p>
-                          <div class="video-container">
-                              <video controls autoplay playsinline>
-                                  <source src="videos/Mapping.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                              </video>
-                          </div>
-                        </div>
-                      
-                      </div>
-                </div>
-                <div class="feature" id="feature3">
-                    <div class="feature-image">
-                        <img src="images/mapping.jpg" alt="Feature 3">
-                    </div>
-                    <div class="feature-content">
-                        <p>Robodetect system utilizes robot dog's deep camera for creating real time 2D occupancy grid map of the area.
-                            Robot takes sensor data and send it to server. Server sends back updated map to Web UI. Real time Area maps 
-                            is an very beneficial element for rescue planning. Rescue team can send robot dog beforehand to get 
-                            a mapping of area.
-                        </p>
-                        <h3>Real Time Area Mapping</h3>
-                    </div>
-                    <div id="modal3" class="modal">
+				<ol class="olcards another-load">
+					<li style="--cardColor: var(--color-black)">
+						<div class="content">
+							<div class="title">
+								Robot Dog Simulation Sends Video
+							</div>
+							<div class="text">
+								The robot dog simulation we created using Gazebo
+								sends video with depth info to our server. Both
+								simulator and server connected via Husarnet VPN.
+							</div>
+						</div>
+					</li>
+					<li style="--cardColor: var(--color-darkestgrey)">
+						<div class="content">
+							<div class="title">
+								Server Side Processing, YOLO
+							</div>
+							<div class="text">
+								Our server process video stream using YOLO
+								object detection algorithm and creates
+								bounding-box info for objects in video. Using
+								depth info server creates 2D occupancy grid map.
+							</div>
+						</div>
+					</li>
+					<li style="--cardColor: var(--color-darkerrgrey)">
+						<div class="content">
+							<div class="title">Web UI Control, Command</div>
+							<div class="text">
+								Web UI shows processed video, list of objects in
+								video stream, real time occupancy grid map and
+								keyboard/joystick controls. Operator can select
+								target human from list to track meanwhile can
+								send manual control commands for robot dog
+								movements.
+							</div>
+						</div>
+					</li>
+					<li style="--cardColor: var(--color-darkergrey)">
+						<div class="content">
+							<div class="title">Human Tracking</div>
+							<div class="text">
+								Server receives selected target human from
+								operator. It calculates the path for target and
+								sends movement commands accordingly. As the
+								object moves path is updated accordingly.
+								Meanwhile if it receives a manual movement
+								command it send this movement to robot dog in
+								simulator.
+							</div>
+						</div>
+					</li>
+					<li style="--cardColor: var(--color-darkgrey)">
+						<div class="content">
+							<div class="title">Robot Dog in Simulator</div>
+							<div class="text">
+								Robot dog in Gazebo simulator receives those
+								movement commands send by server and starts to
+								move desired position.
+							</div>
+						</div>
+					</li>
+				</ol>
+				<!-- <h2>Demonstration</h2>
+				<div class="demo-container lazy-load">
+					<div class="youtube-video-container">
+						<iframe
+							src="https://www.youtube.com/watch?v=lRL9Dyz-XrQ"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+						></iframe>
+					</div>
+					<div class="poster-container">
+						<img src="images/control.jpg" alt="PDF Image" />
+						<div class="middle">
+							<a
+								href="images/ASTARTE-poster.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								><i
+									class="fa fa-file-pdf-o"
+									aria-hidden="true"
+								></i>
+								View PDF</a
+							>
+						</div>
+					</div>
+				</div> -->
 
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                          <span class="close" id="close3">&times;</span>
-                          <p style="color: white;">Real Time Area Mapping</p>
-                          <div class="video-container">
-                              <video controls autoplay playsinline>
-                                  <source src="videos/Mapping.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                              </video>
-                          </div>
-                        </div>
-                      
-                      </div>
-                </div>
-                <div class="feature" id="feature4">
-                    <div class="feature-image">
-                        <img src="images/control.jpg" alt="Feature 4">
-                    </div>
-                    <div class="feature-content">
-                        <p>Operator can control and give movement, tracking etc. commands from any browser. Most of the robot dogs require
-                            specialized control devices which can be quite complex. Our specially designed Web UI offers both simple
-                            keyboard control and digital joystick control. It even supports XBOX controller for precise movements!
-                        </p>
-                        <h3>Control and Command for Robot Dog</h3>
-                    </div>
-                    <div id="modal4" class="modal">
+				<h2>Tech Stack</h2>
+				<p>
+					In the backend, we use Flask, ROS, Yolov7 and socket.io. We
+					used RViz for mapping. Gazebo and RViz used in simulator
+					side. The frontend is built using React, which are renowned
+					for their performance and ease of use. Lastly, we use GitLab
+					for version control, supporting our collaborative
+					development efforts.
+				</p>
+				<div class="tech-stack lazy-load">
+					<div class="tech-plate">
+						<div class="tech-plate-image">
+							<img src="images/react.png" alt="Django" />
+						</div>
+						<div class="tech-plate-content">React</div>
+					</div>
+					<div class="tech-plate">
+						<div class="tech-plate-image">
+							<img
+								src="images/robot-operating-system.png"
+								alt="Flutter"
+							/>
+						</div>
+						<div class="tech-plate-content">ROS</div>
+					</div>
+					<div class="tech-plate">
+						<div class="tech-plate-image">
+							<img src="images/flask.png" alt="Firebase" />
+						</div>
+						<div class="tech-plate-content">Flask</div>
+					</div>
+					<div class="tech-plate">
+						<div class="tech-plate-image">
+							<img src="images/gazebo.png" alt="Docker" />
+						</div>
+						<div class="tech-plate-content">Gazebo</div>
+					</div>
+					<div class="tech-plate">
+						<div class="tech-plate-image">
+							<img src="images/gitlab.png" alt="Git" />
+						</div>
+						<div class="tech-plate-content">Git/GitLab</div>
+					</div>
+				</div>
+			</section>
+			<section class="about-us lazy-load" id="about-us">
+				<h2>About Us</h2>
+				<p>
+					ROBODETECT team members are a group of senior students who
+					are deeply concerned about their country's earthquake risk.
+					By ROBODETECT system they aim to help rescue teams in their
+					rescue operation efforts.
+				</p>
+				<div class="team">
+					<div class="team-member">
+						<img src="images/barış.png" alt="Barış Sarper Tezcan" />
+						<div class="middle">
+							<a href="https://www.linkedin.com/in/aerengns/"
+								><i class="fa fa-linkedin-square fa-2x"></i
+							></a>
+							<a href="https://github.com/aerengns"
+								><i class="fa fa-github fa-2x"></i
+							></a>
+						</div>
+						<h3>Barış Sarper Tezcan</h3>
+						<p>Project Manager</p>
+					</div>
+					<div class="team-member">
+						<img src="images/furkan.png" alt="Furkan Genç" />
+						<div class="middle">
+							<a href="https://www.linkedin.com/in/cengineer13/"
+								><i class="fa fa-linkedin-square fa-2x"></i
+							></a>
+							<a href="https://github.com/Cengineer00"
+								><i class="fa fa-github fa-2x"></i
+							></a>
+						</div>
+						<h3>Furkan Genç</h3>
+						<p>Developer</p>
+					</div>
+					<div class="team-member">
+						<img src="images/serhat.png" alt="Serhat Andıç" />
+						<div class="middle">
+							<a href="https://www.linkedin.com/in/nurayakar/"
+								><i class="fa fa-linkedin-square fa-2x"></i
+							></a>
+							<a href="https://github.com/ingeniararto"
+								><i class="fa fa-github fa-2x"></i
+							></a>
+						</div>
+						<h3>Serhat Andıç</h3>
+						<p>Developer</p>
+					</div>
+					<div class="team-member">
+						<img src="images/ismail.png" alt="İsmail Karabaş" />
+						<div class="middle">
+							<a href="https://www.linkedin.com/in/aylin-topcu/"
+								><i class="fa fa-linkedin-square fa-2x"></i
+							></a>
+							<a href="https://github.com/aylintopcu"
+								><i class="fa fa-github fa-2x"></i
+							></a>
+						</div>
+						<h3>İsmail Karabaş</h3>
+						<p>Developer</p>
+					</div>
+					<div class="team-member">
+						<img src="images/hikmet.jpeg" alt="Hikmet Türkan" />
+						<div class="middle">
+							<a href="https://www.linkedin.com/in/kursatkaya/"
+								><i class="fa fa-linkedin-square fa-2x"></i
+							></a>
+							<a href="https://github.com/kursatfelsen"
+								><i class="fa fa-github fa-2x"></i
+							></a>
+						</div>
+						<h3>Hikmet Türkan</h3>
+						<p>Developer</p>
+					</div>
+				</div>
+				<div class="team" style="margin-top: 3rem">
+					<div class="team-member">
+						<img
+							src="images/emre.jpeg"
+							alt="Emre Akbaş"
+							style="width: auto; height: auto"
+						/>
+						<div class="middle">
+							<a href="https://www.linkedin.com/in/emreakbas/"
+								><i class="fa fa-linkedin-square fa-2x"></i
+							></a>
+							<a href="https://user.ceng.metu.edu.tr/~emre/"
+								><i class="fa fa-globe fa-2x"></i
+							></a>
+						</div>
+						<h3>Asst. Prof. Dr. Emre Akbaş</h3>
+						<p>Project Supervisor and Mentor</p>
+					</div>
+				</div>
+			</section>
+			<section class="contact-us lazy-load" id="contact-us">
+				<h2>Contact Information</h2>
+				<div class="contact-item">
+					<p>
+						<i class="fa fa-envelope"></i> Email:
+						<a href="mailto:app.astarte@gmail.com"
+							>roboDetect@gmail.com</a
+						>
+					</p>
+				</div>
+				<div class="contact-item">
+					<p>
+						<i class="fa fa-map-marker"></i> Address: Orta Doğu
+						Teknik Üniversitesi, Üniversiteler Mahallesi, Dumlupınar
+						Bulvarı No:1 06800 Çankaya
+					</p>
+				</div>
+				<div class="contact-item">
+					<h3>Sponsor</h3>
+					<img
+						style="margin-bottom: -1rem"
+						src="images/Aselsan_Logo.png"
+						alt="Sponsor"
+					/>
+				</div>
+			</section>
+		</main>
 
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                          <span class="close" id="close4">&times;</span>
-                          <p style="color: white;">Soil Monitoring</p>
-                          <div class="video-container">
-                              <video controls autoplay playsinline>
-                                  <source src="videos/farm-monitor.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                              </video>
-                          </div>
-                        </div>
-                      
-                      </div>
-                </div>
+		<footer>
+			<p><i class="icon"></i>© 2024 ROBODETECT</p>
+		</footer>
+	</body>
+	<script>
+		$(document).ready(function () {
+			$('a.scroll-link').click(function (e) {
+				e.preventDefault();
+				var target = $(this).attr('href');
+				$('html, body').animate(
+					{
+						scrollTop: $(target).offset().top - 60,
+					},
+					1000
+				); // 1000 milliseconds = 1 second
+			});
+			/* Intersection Observer */
+			let observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('animate');
+						} else {
+							entry.target.classList.remove('animate');
+						}
+					});
+				},
+				{
+					threshold: 0.1,
+				}
+			);
 
-            </div>
-        </section>
-        
-        <section class="how-it-works" id="how-it-works">
-            <h2>How It Works</h2>
-    
-            <ol class="olcards another-load">
-                <li style="--cardColor:var(--color-black)">
-                
-                    <div class="content">
-                        <div class="title">Robot Dog Simulation Sends Video</div>
-                        <div class="text"> The robot dog simulation we created using Gazebo sends video with depth info to our server. Both simulator and server connected via Husarnet VPN.</div>
-                    </div>
-                </li>
-                <li style="--cardColor:var(--color-darkestgrey)">
-                    <div class="content">
-                        <div class="title">Server Side Processing, YOLO</div>
-                        <div class="text">Our server process video stream using YOLO object detection algorithm and creates bounding-box info for objects in video. Using depth info server creates 2D occupancy grid map.</div>
-                    </div>
-                </li>
-                <li style="--cardColor:var(--color-darkerrgrey)">
-                    <div class="content">
-                        <div class="title">Web UI Control, Command</div>
-                        <div class="text">Web UI shows processed video, list of objects in video stream, real time occupancy grid map and keyboard/joystick controls. Operator can select target human from list to track meanwhile can send manual control commands for robot dog movements.</div>
-                    </div>
-                </li>
-                <li style="--cardColor: var(--color-darkergrey);">
-                    <div class="content"> 
-                        <div class="title">Human Tracking</div>
-                        <div class="text">Server receives selected target human from operator. It calculates the path for target and sends movement commands accordingly. As the object moves path is updated accordingly. Meanwhile if it receives a manual movement command it send this movement to robot dog in simulator.</div>
-                    </div>
-                </li>
-                <li style="--cardColor:var(--color-darkgrey);">
-                    <div class="content">
-                        <div class="title">Robot Dog in Simulator</div>
-                        <div class="text">Robot dog in Gazebo simulator receives those movement commands send by server and starts to move desired position.</div>
-                    </div>
-                </li>
-            </ol>
-            <h2>Demonstration</h2>
-            <div class="demo-container lazy-load">
-                <div class="youtube-video-container">
-                  <!-- YouTube video embed code -->
-                  <iframe src="https://www.youtube.com/watch?v=lRL9Dyz-XrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="poster-container">
-                  <!-- PDF image -->
-                  <img src="images/control.jpg" alt="PDF Image">
-                  <div class="middle">
-                        <a href="images/ASTARTE-poster.pdf" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> View PDF</a>
-                  </div>
-                </div>
-              </div>
-              
-            <h2>Tech Stack</h2>
-            <p>In the backend, we use Flask, ROS, Yolov7 and socket.io. We used RViz for mapping. Gazebo and RViz used in simulator side.
-                The frontend is built using React, which are renowned for their performance and ease of use.  
-                Lastly, we use GitLab for version control, supporting our collaborative development efforts.</p>
-            <div class="tech-stack lazy-load">
-                <div class="tech-plate">
-                    <div class="tech-plate-image">
-                        <img src="images/react.png" alt="Django">
-                    </div>
-                    <div class="tech-plate-content">
-                        React
-                    </div>
-                </div>
-                <div class="tech-plate">
-                    <div class="tech-plate-image">
-                        <img src="images/ros.jpeg" alt="Flutter">
-                    </div>
-                    <div class="tech-plate-content">
-                        ROS
-                    </div>
-                </div>
-                <div class="tech-plate">
-                    <div class="tech-plate-image">
-                        <img src="images/flask.png" alt="Firebase">
-                    </div>
-                    <div class="tech-plate-content">
-                        Flask
-                    </div>
-                </div>
-                <div class="tech-plate">
-                    <div class="tech-plate-image">
-                        <img src="images/gazebo.png" alt="Docker">
-                    </div>
-                    <div class="tech-plate-content">
-                        Gazebo                    </div>
-                </div>
-                <div class="tech-plate">
-                    <div class="tech-plate-image">
-                        <img src="images/gitlab.png" alt="Git">
-                    </div>
-                    <div class="tech-plate-content">
-                        Git/GitLab
-                    </div>
-                </div>
-            </div>
+			const contents = document.querySelectorAll('.olcards li .content');
+			contents.forEach((content) => {
+				observer.observe(content);
+			});
+		});
 
-        </section>
-        <section class="about-us lazy-load" id="about-us">
-            <h2>About Us</h2>
-            <p>ROBODETECT team members are a group of senior students who are deeply concerned about their country's earthquake risk.
-                By ROBODETECT system they aim to help rescue teams in their rescue operation efforts. 
-            </p>
-            <div class="team">
-                <div class="team-member">
-                    <img src="images/barış.png" alt="Barış Sarper Tezcan">
-                    <div class="middle">
-                        <a href="https://www.linkedin.com/in/aerengns/"><i class='fa fa-linkedin-square fa-2x'></i></a>
-                        <a href="https://github.com/aerengns"><i class="fa fa-github fa-2x"></i></i></a>
-                    </div>
-                    <h3>Barış Sarper Tezcan</h3>
-                    <p>Project Manager</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/furkan.png" alt="Furkan Genç">
-                    <div class="middle">
-                        <a href="https://www.linkedin.com/in/cengineer13/"><i
-                                class='fa fa-linkedin-square fa-2x'></i></a>
-                        <a href="https://github.com/Cengineer00"><i class="fa fa-github fa-2x"></i></i></a>
-                    </div>
-                    <h3>Furkan Genç</h3>
-                    <p>Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/serhat.png" alt="Serhat Andıç">
-                    <div class="middle">
-                        <a href="https://www.linkedin.com/in/nurayakar/"><i class='fa fa-linkedin-square fa-2x'></i></a>
-                        <a href="https://github.com/ingeniararto"><i class="fa fa-github fa-2x"></i></i></a>
-                    </div>
-                    <h3>Serhat Andıç</h3>
-                    <p>Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/ismail.png" alt="İsmail Karabaş">
-                    <div class="middle">
-                        <a href="https://www.linkedin.com/in/aylin-topcu/"><i
-                                class='fa fa-linkedin-square fa-2x'></i></a>
-                        <a href="https://github.com/aylintopcu"><i class="fa fa-github fa-2x"></i></i></a>
-                    </div>
-                    <h3>İsmail Karabaş</h3>
-                    <p>Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/hikmet.jpeg" alt="Hikmet Türkan">
-                    <div class="middle">
-                        <a href="https://www.linkedin.com/in/kursatkaya/"><i
-                                class='fa fa-linkedin-square fa-2x'></i></a>
-                        <a href="https://github.com/kursatfelsen"><i class="fa fa-github fa-2x"></i></i></a>
-                    </div>
-                    <h3>Hikmet Türkan</h3>
-                    <p>Developer</p>
-                </div>
-            </div>
-            <div class="team" style="margin-top: 3rem;">
-                <div class="team-member">
-                    <img src="images/emre.jpeg" alt="Emre Akbaş" style="width: auto; height: auto;">
-                    <div class="middle">
-                        <a href="https://www.linkedin.com/in/emreakbas/"><i class='fa fa-linkedin-square fa-2x'></i></a>
-                        <a href="https://user.ceng.metu.edu.tr/~emre/"><i class="fa fa-globe fa-2x"></i></i></a>
-                    </div>
-                    <h3>Asst. Prof. Dr. Emre Akbaş</h3>
-                    <p>Project Supervisor and Mentor</p>
-                </div>
-            </div>
-        </section>
-        <section class="contact-us lazy-load" id="contact-us">
-            <h2>Contact Information</h2>
-            <div class="contact-item">
-                <p><i class="fa fa-envelope"></i>
-                    Email: <a href="mailto:app.astarte@gmail.com">roboDetect@gmail.com</a></p>
-            </div>
-            <div class="contact-item">
-                <p><i class="fa fa-map-marker"></i>
-                Address: Orta Doğu Teknik Üniversitesi, Üniversiteler Mahallesi, Dumlupınar Bulvarı No:1 06800
-                Çankaya</p>
-            </div>
-            <div class="contact-item">
-                <h3>
-                Sponsor</h3> <img style="margin-bottom: -1rem;" src="images/Aselsan_Logo.png" alt="Sponsor">
-                
-            </div>
-        </section>
-    </main>
+		/* Lazy Load */
+		function lazyLoad() {
+			const lazyLoadDivs = document.querySelectorAll('.lazy-load');
 
-    <footer>
-        <p><i class='icon'></i>© 2024 ROBODETECT </p>
-    </footer>
+			lazyLoadDivs.forEach((lazyLoadDiv) => {
+				if (
+					lazyLoadDiv.getBoundingClientRect().top < window.innerHeight
+				) {
+					// Remove the "lazy-load" class to trigger the content to load
+					lazyLoadDiv.style.opacity = '1';
+				}
+			});
+		}
 
-</body>
-<script>
-    $(document).ready(function () {
-        $('a.scroll-link').click(function (e) {
-            e.preventDefault();
-            var target = $(this).attr('href');
-            $('html, body').animate({
-                scrollTop: $(target).offset().top - 60
-            }, 1000); // 1000 milliseconds = 1 second
-        });
-        /* Intersection Observer */
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                } else {
-                    entry.target.classList.remove("animate");
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+		/* Another Load */
+		function anotherLoad() {
+			const anotherLoadDivs = document.querySelectorAll('.another-load');
 
-        const contents = document.querySelectorAll('.olcards li .content');
-        contents.forEach((content) => {
-            observer.observe(content);
-        });
-    });
+			anotherLoadDivs.forEach((anotherLoadDiv) => {
+				const rect = anotherLoadDiv.getBoundingClientRect();
+				const isInViewport =
+					rect.top < window.innerHeight && rect.bottom >= 0;
 
-    /* Lazy Load */
-    function lazyLoad() {
-        const lazyLoadDivs = document.querySelectorAll('.lazy-load');
+				if (isInViewport) {
+					anotherLoadDiv.classList.add('animate');
+				} else {
+					anotherLoadDiv.classList.remove('animate');
+				}
+			});
+		}
 
-        lazyLoadDivs.forEach((lazyLoadDiv) => {
-            if (lazyLoadDiv.getBoundingClientRect().top < window.innerHeight) {
-                // Remove the "lazy-load" class to trigger the content to load
-                lazyLoadDiv.style.opacity = "1";
-            }
-        });
-    }
+		window.addEventListener('scroll', lazyLoad);
+		window.addEventListener('scroll', anotherLoad);
 
-    /* Another Load */
-    function anotherLoad() {
-        const anotherLoadDivs = document.querySelectorAll('.another-load');
+		const features = document.querySelectorAll('.feature');
+		const modals = document.querySelectorAll('.modal');
+		const closeButtons = document.querySelectorAll('.close');
 
-        anotherLoadDivs.forEach((anotherLoadDiv) => {
-            const rect = anotherLoadDiv.getBoundingClientRect();
-            const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
-            
-            if (isInViewport) {
-                anotherLoadDiv.classList.add('animate');
-            } else {
-                anotherLoadDiv.classList.remove('animate');
-            }
-        });
-    }
+		// Add click event listeners to each feature element
+		features.forEach((feature, index) => {
+			feature.addEventListener('click', () => {
+				modals[index].style.display = 'block'; // Display the corresponding modal when clicked
+			});
+		});
 
-    window.addEventListener('scroll', lazyLoad);
-    window.addEventListener('scroll', anotherLoad);
+		closeButtons.forEach((button, index) => {
+			button.addEventListener('click', () => {
+				event.stopPropagation();
+				modals[index].style.setProperty('display', 'none', 'important'); // Hide the corresponding modal with higher specificity
+				console.log(modals[index]);
+			});
+		});
 
-    const features = document.querySelectorAll('.feature');
-    const modals = document.querySelectorAll('.modal');
-    const closeButtons = document.querySelectorAll('.close');
-
-    // Add click event listeners to each feature element
-    features.forEach((feature, index) => {
-        feature.addEventListener('click', () => {
-            modals[index].style.display = 'block'; // Display the corresponding modal when clicked
-        });
-    });
-
-    closeButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            event.stopPropagation();
-            modals[index].style.setProperty('display', 'none', 'important'); // Hide the corresponding modal with higher specificity
-            console.log(modals[index]);
-        });
-    });
-
-    // Close the modal when the user clicks outside of it
-    window.addEventListener('click', (event) => {
-        modals.forEach((modal) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
-
-</script>
-
+		// Close the modal when the user clicks outside of it
+		window.addEventListener('click', (event) => {
+			modals.forEach((modal) => {
+				if (event.target === modal) {
+					modal.style.display = 'none';
+				}
+			});
+		});
+	</script>
 </html>
